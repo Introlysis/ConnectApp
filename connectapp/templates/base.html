@@ -2,13 +2,34 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width;initial-scale=1.0">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>{% block title %}{% endblock %}</title>
-        <link rel='stylesheet' href="{{ url_for('static',filename='css/styles.css') }}">
+        <link rel='stylesheet' href='{{ url_for('static',filename='css/bootstrap.min.css') }}'>
+        <link rel='stylesheet' href='{{ url_for('static',filename='css/styles.css') }}'>
     </head>
     <body>
+        <header>
+            <h1 class=''>ConnectApp</h1> 
+            <nav>
+                <ul>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
         <div>
             {% block content %}{% endblock %}
         </div>
+
+        <footer>
+            <p>
+                Copyright Joseph Senger Industries &copy;2022. Please note, this is not a real copyright.
+            </p>
+        </footer>
     </body>
+
+    <script src='{{ url_for('static',filename='js/jquery-3.6.1.min.js') }}'></script>
+    <script src='{{ url_for('static',filename='js/bootstrap.min.js') }}'></script>
+    <script src='{{ url_for('static',filename='js/scripts.js') }}'></script>
 </html>
